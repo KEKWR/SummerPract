@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE HTML>
+
+
+<html lang="ru">
+	<head>
+
+		<link rel="stylesheet" href="{% static 'css/maincss.css' %}" />
+		<link href="{% static 'css/light-theme.css' %}" rel="stylesheet" id="theme-link">
+		<link rel="stylesheet" href="{% static 'css/small.css' %}" 	media=" (max-width: 1080px)"/>
+		<link rel="stylesheet" href="{% static 'css/normal.css' %}" media="(min-width: 1081px)"	/>
+		<meta name="color-scheme" content="dark light">
+		{% block style %}
+		{% endblock %}
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		
+		<title>{{ title }}</title>
+		
+	</head>
+	
+	
+	<body>
+		<div class="wrapper">
+
+			<nav class="navigation">
+				  <h1 class="title">{{ title }} </h1>
+				  <ul>
+					<li><button class="btn-toggle2"> <img src="{% static 'img/mem.png' %}"  class="menu"></button>
+					  <ul>
+						<li>
+							<a href="{% url 'home' %}">Главная</a>
+							<a href="{% url 'actor' %}">Актеры</a>
+							<a href="{% url 'directors' %}">Режиссеры</a>
+							<a href="{% url 'movies' %}">Фильмы</a>
+							<a href="{% url 'reviews' %}">Рецензии</a>
+							<a href="{% url 'history' %}">История кино</a>
+							<a href="{% url 'account' %}">Вход/Регистрация</a>
+						</li>
+
+					  </ul>
+					</li>
+				  </ul>
+			</nav> 
+
+    		{% block content %}
+			
+    		{% endblock %}
+
+			<div class="footer">
+			Данный сайт создавался в период с 29.06.2022 по 26.07.2022
+			в качетсве проекта для летней учебной (ознакомительной) практики
+			по программированию студентами
+			Московского государственного университета геодезии и картографии (МИИГАиК) ФГиИБ ИБ 1-1Б.
+			<br>
+			Тимлид: Коткин Артём
+			Дизайнер: Назарова Анастасия
+			Дизайнер: Рыжиков Кирилл
+			Backend:  Зотов Александр	
+			Frontend: Жданов Михаил 
+			</div>
+		
+		</div>
+	<script src="{% static 'js/theme.js' %}"></script>
+</body>
+</html>
